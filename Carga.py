@@ -19,6 +19,8 @@ team_history = pd.read_csv('./csv/team_history.csv')
 team_info_common = pd.read_csv('./csv/team_info_common.csv')
 team = pd.read_csv('./csv/team.csv')
 
+
+
 diccionarioDataFrame = {
     'common_player_info': common_player_info,
     'draft_combine_stats': draft_combine_stats,
