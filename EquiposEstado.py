@@ -1,10 +1,12 @@
+#Numero equipos por estado
 
-import Carga
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+team = pd.read_csv('./csv/team.csv')
 
 # Agrupa los equipos por estado y cuenta la cantidad de equipos en cada estado
-equipos_por_estado = Carga.team.groupby('state').size()
+equipos_por_estado = team.groupby('state').size()
 
 # Convierte el resultado en un DataFrame para mayor facilidad y ordena por cantidad en orden descendente
 equipos_por_estado_df = equipos_por_estado.reset_index(name='cantidad').sort_values(by='cantidad', ascending=False)

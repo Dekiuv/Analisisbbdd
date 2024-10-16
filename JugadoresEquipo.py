@@ -1,11 +1,12 @@
 #Numero de jugadores por equipo
 
-import Carga
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+common_player_info = pd.read_csv('./csv/common_player_info.csv')
 
 # Agrupa los jugadores por equipo y cuenta la cantidad de jugadores en cada equipo
-jugadores_por_equipo = Carga.common_player_info.groupby('team_name').size()
+jugadores_por_equipo = common_player_info.groupby('team_name').size()
 
 # Convierte el resultado en un DataFrame para mayor facilidad y ordena los equipos por cantidad de jugadores
 jugadores_por_equipo_df = jugadores_por_equipo.reset_index(name='cantidad').sort_values(by='cantidad', ascending=False)
